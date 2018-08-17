@@ -16,7 +16,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var superheroImageView: UIImageView!
     @IBOutlet weak var mySwitch: UISwitch!
+    @IBOutlet weak var voiceType: UISlider!
     
+    @IBOutlet weak var speedRate: UISlider!
     
     
     
@@ -26,10 +28,14 @@ class ViewController: UIViewController {
             superheroImageView.image = UIImage(named: "batman")
             if mySwitch.isOn {
             quoteLabel.isHidden = false
-            quoteLabel.text = "The night is darkest just before the dawn. And I promise you, the dawn is coming."
-            let speech = AVSpeechUtterance(string: quoteLabel.text!)
-            let synthesizer = AVSpeechSynthesizer()
-            synthesizer.speak(speech)
+            quoteLabel.text = "The night is darkest just before the dawn"
+                let speechUtterance = AVSpeechUtterance(string:quoteLabel.text!)
+                speechUtterance.voice = AVSpeechSynthesisVoice(language:"en-US")
+                let synthesizer = AVSpeechSynthesizer()
+                speechUtterance.pitchMultiplier = voiceType.value
+                speechUtterance.rate = speedRate.value
+                synthesizer.speak(speechUtterance)
+                
             } else {
                 quoteLabel.isHidden = true
         }
@@ -37,10 +43,13 @@ class ViewController: UIViewController {
             superheroImageView.image = UIImage(named: "achilles")
             if mySwitch.isOn {
             quoteLabel.isHidden = false
-            quoteLabel.text = "The Gods envy us"
-            let speech = AVSpeechUtterance(string: quoteLabel.text!)
-            let synthesizer = AVSpeechSynthesizer()
-            synthesizer.speak(speech)
+            quoteLabel.text = "Les dieux nous envient"
+                let speechUtterance = AVSpeechUtterance(string:quoteLabel.text!)
+                speechUtterance.voice = AVSpeechSynthesisVoice(language:"fr-ca")
+                let synthesizer = AVSpeechSynthesizer()
+                speechUtterance.pitchMultiplier = voiceType.value
+                speechUtterance.rate = speedRate.value
+                synthesizer.speak(speechUtterance)
             
             } else {
                 quoteLabel.isHidden = true
@@ -49,10 +58,13 @@ class ViewController: UIViewController {
             superheroImageView.image = UIImage(named: "spiderman")
             if mySwitch.isOn {
             quoteLabel.isHidden = false
-            quoteLabel.text = "With great power, comes great responsibility"
-            let speech = AVSpeechUtterance(string: quoteLabel.text!)
-            let synthesizer = AVSpeechSynthesizer()
-            synthesizer.speak(speech)
+            quoteLabel.text = "Con un gran poder viene una gran responsabilidad"
+                let speechUtterance = AVSpeechUtterance(string:quoteLabel.text!)
+                speechUtterance.voice = AVSpeechSynthesisVoice(language:"es")
+                let synthesizer = AVSpeechSynthesizer()
+                speechUtterance.pitchMultiplier = voiceType.value
+                speechUtterance.rate = speedRate.value
+                synthesizer.speak(speechUtterance)
             
             } else {
                 quoteLabel.isHidden = true
@@ -61,10 +73,13 @@ class ViewController: UIViewController {
             superheroImageView.image = UIImage(named: "wolverine")
             if mySwitch.isOn {
             quoteLabel.isHidden = false
-            quoteLabel.text = "Don’t be what they made you"
-            let speech = AVSpeechUtterance(string: quoteLabel.text!)
-            let synthesizer = AVSpeechSynthesizer()
-            synthesizer.speak(speech)
+            quoteLabel.text = "Не тое, што яны зрабілі вас"
+                let speechUtterance = AVSpeechUtterance(string:quoteLabel.text!)
+                speechUtterance.voice = AVSpeechSynthesisVoice(language:"ru")
+                let synthesizer = AVSpeechSynthesizer()
+                speechUtterance.pitchMultiplier = voiceType.value
+                speechUtterance.rate = speedRate.value
+                synthesizer.speak(speechUtterance)
             } else {
                 quoteLabel.isHidden = true
         }
@@ -72,14 +87,12 @@ class ViewController: UIViewController {
             superheroImageView.image = UIImage(named: "papaman")
             if mySwitch.isOn {
             quoteLabel.isHidden = false
-            quoteLabel.text = "Go brush your teeth and go to bed."
-            let speech = AVSpeechUtterance(string: quoteLabel.text!)
-            let synthesizer = AVSpeechSynthesizer()
-            synthesizer.speak(speech)
-            if let url = Bundle.main.url(forResource: "i want something like this", withExtension: "mp3") {
+            quoteLabel.text = "去刷牙，快上床睡覺"
+                if let url = Bundle.main.url(forResource: "Brush", withExtension: "m4a"){
                     player = AVPlayer(url: url)
                     player?.play()
                 }
+           
             } else {
                 quoteLabel.isHidden = true
         }

@@ -13,6 +13,7 @@
 		DD31429F209B522C005D2CEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD31429E209B522C005D2CEA /* Assets.xcassets */; };
 		DD3142A2209B522C005D2CEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3142A0209B522C005D2CEA /* LaunchScreen.storyboard */; };
 		DD36C1A5211002E2007C9A15 /* i want something like this.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DD36C1A4211002E2007C9A15 /* i want something like this.mp3 */; };
+		DDF8BE2B212714CE00CC9D2B /* Brush.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DDF8BE2A212714CD00CC9D2B /* Brush.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		DD3142A1209B522C005D2CEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD3142A3209B522C005D2CEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD36C1A4211002E2007C9A15 /* i want something like this.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "i want something like this.mp3"; sourceTree = "<group>"; };
+		DDF8BE2A212714CD00CC9D2B /* Brush.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brush.m4a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		DD314296209B522C005D2CEA /* PapaMan */ = {
 			isa = PBXGroup;
 			children = (
+				DDF8BE2A212714CD00CC9D2B /* Brush.m4a */,
 				DD314297209B522C005D2CEA /* AppDelegate.swift */,
 				DD36C1A4211002E2007C9A15 /* i want something like this.mp3 */,
 				DD314299209B522C005D2CEA /* ViewController.swift */,
@@ -126,6 +129,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDF8BE2B212714CE00CC9D2B /* Brush.m4a in Resources */,
 				DD3142A2209B522C005D2CEA /* LaunchScreen.storyboard in Resources */,
 				DD31429F209B522C005D2CEA /* Assets.xcassets in Resources */,
 				DD36C1A5211002E2007C9A15 /* i want something like this.mp3 in Resources */,
