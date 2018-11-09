@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var voiceTypeLabel: UILabel!
     @IBOutlet weak var speedRateLabel: UILabel!
     @IBOutlet weak var volumeLabel: UILabel!
-    
+   
     @IBAction func sliderChange(_ sender: UISlider){
     voiceTypeLabel.text = String(format:"%.f", voiceType.value
     )}
@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     volumeLabel.text = String(format:"%.f",volume.value)
         }
   
-    
+     
     func chooosePapaMan(){
        switch segmentControl.selectedSegmentIndex {
         case 0:
@@ -50,6 +50,7 @@ class ViewController: UIViewController {
                 speechUtterance1.pitchMultiplier = voiceType.value
                 speechUtterance1.rate = speedRate.value
                 speechUtterance1.volume = volume.value
+                
                 speechUtterance2.pitchMultiplier = voiceType.value
                 speechUtterance2.rate = speedRate.value
                 speechUtterance2.volume = volume.value
