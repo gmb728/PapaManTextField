@@ -11,8 +11,8 @@ import AVFoundation
 
 class ViewController: UIViewController {
     var player : AVPlayer?
+    let synthesizer = AVSpeechSynthesizer()
     
-   
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var superheroImageView: UIImageView!
     @IBOutlet weak var mySwitch: UISwitch!
@@ -33,20 +33,21 @@ class ViewController: UIViewController {
     @IBAction func volumeChange(_ sender: UISlider) {
     volumeLabel.text = String(format:"%.f",volume.value)
         }
-  
-     
-    func chooosePapaMan(){
-       switch segmentControl.selectedSegmentIndex {
+   
+   
+    
+    @IBAction func segmentControlAction(_ sender: UISegmentedControl) {
+    
+        switch segmentControl.selectedSegmentIndex {
         case 0:
             superheroImageView.image = UIImage(named: "batman")
             if mySwitch.isOn {
-               
-               let speechUtterance1 = AVSpeechUtterance(string:quoteTextField.text!)
-                let speechUtterance2 = AVSpeechUtterance(string:"貝爾")
-               speechUtterance2.preUtteranceDelay = 5
-               speechUtterance1.voice = AVSpeechSynthesisVoice(language:"zh-TW")
+                let speechUtterance1 = AVSpeechUtterance(string:quoteTextField.text!)
+                let speechUtterance2 = AVSpeechUtterance(string:"蝙蝠俠")
+                speechUtterance2.preUtteranceDelay = 3
+                speechUtterance1.voice = AVSpeechSynthesisVoice(language:"zh-TW")
                 speechUtterance2.voice = AVSpeechSynthesisVoice(language:"zh-TW")
-                let synthesizer = AVSpeechSynthesizer()
+           
                 speechUtterance1.pitchMultiplier = voiceType.value
                 speechUtterance1.rate = speedRate.value
                 speechUtterance1.volume = volume.value
@@ -56,82 +57,104 @@ class ViewController: UIViewController {
                 speechUtterance2.volume = volume.value
                 synthesizer.speak(speechUtterance1)
                 synthesizer.speak(speechUtterance2)
-              
-               
-            } else {
-               
-        }
-         case 1:
-            superheroImageView.image = UIImage(named: "achilles")
-            if mySwitch.isOn {
-           
-                let speechUtterance = AVSpeechUtterance(string:quoteTextField.text!)
-                speechUtterance.voice = AVSpeechSynthesisVoice(language:"zh-TW")
-                let synthesizer = AVSpeechSynthesizer()
-                speechUtterance.pitchMultiplier = voiceType.value
-                speechUtterance.rate = speedRate.value
-                 speechUtterance.volume = volume.value
-                synthesizer.speak(speechUtterance)
+                
             } else {
                 
-        }
+            }
+        case 1:
+            superheroImageView.image = UIImage(named: "achilles")
+            if mySwitch.isOn {
+                let speechUtterance1 = AVSpeechUtterance(string:quoteTextField.text!)
+                let speechUtterance2 = AVSpeechUtterance(string:"阿基里斯")
+                speechUtterance2.preUtteranceDelay = 3
+                speechUtterance1.voice = AVSpeechSynthesisVoice(language:"zh-TW")
+                speechUtterance2.voice = AVSpeechSynthesisVoice(language:"zh-TW")
+                
+                speechUtterance1.pitchMultiplier = voiceType.value
+                speechUtterance1.rate = speedRate.value
+                speechUtterance1.volume = volume.value
+                
+                speechUtterance2.pitchMultiplier = voiceType.value
+                speechUtterance2.rate = speedRate.value
+                speechUtterance2.volume = volume.value
+                synthesizer.speak(speechUtterance1)
+                synthesizer.speak(speechUtterance2)
+                
+            } else {
+                
+            }
         case 2:
             superheroImageView.image = UIImage(named: "spiderman")
             if mySwitch.isOn {
-                let speechUtterance = AVSpeechUtterance(string:quoteTextField.text!)
-                speechUtterance.voice = AVSpeechSynthesisVoice(language:"zh-TW")
-                let synthesizer = AVSpeechSynthesizer()
-                speechUtterance.pitchMultiplier = voiceType.value
-                speechUtterance.rate = speedRate.value
-                 speechUtterance.volume = volume.value
-                synthesizer.speak(speechUtterance)
-            
-            } else {
+                let speechUtterance1 = AVSpeechUtterance(string:quoteTextField.text!)
+                let speechUtterance2 = AVSpeechUtterance(string:"蜘蛛人")
+                speechUtterance2.preUtteranceDelay = 3
+                speechUtterance1.voice = AVSpeechSynthesisVoice(language:"zh-TW")
+                speechUtterance2.voice = AVSpeechSynthesisVoice(language:"zh-TW")
+
+                speechUtterance1.pitchMultiplier = voiceType.value
+                speechUtterance1.rate = speedRate.value
+                speechUtterance1.volume = volume.value
+                
+                speechUtterance2.pitchMultiplier = voiceType.value
+                speechUtterance2.rate = speedRate.value
+                speechUtterance2.volume = volume.value
+                synthesizer.speak(speechUtterance1)
+                synthesizer.speak(speechUtterance2)
                
-        }
-        case 3:
-            superheroImageView.image = UIImage(named: "wolverine")
-            if mySwitch.isOn {
-           
-                let speechUtterance = AVSpeechUtterance(string:quoteTextField.text!)
-                speechUtterance.voice = AVSpeechSynthesisVoice(language:"zh-TW")
-                let synthesizer = AVSpeechSynthesizer()
-                speechUtterance.pitchMultiplier = voiceType.value
-                speechUtterance.rate = speedRate.value
-                 speechUtterance.volume = volume.value
-                synthesizer.speak(speechUtterance)
             } else {
                 
-        }
+            }
+        case 3:
+            superheroImageView.image = UIImage(named: "wolverine")
+              if mySwitch.isOn {
+            let speechUtterance1 = AVSpeechUtterance(string:quoteTextField.text!)
+            let speechUtterance2 = AVSpeechUtterance(string:"金剛狼")
+            speechUtterance2.preUtteranceDelay = 3
+            speechUtterance1.voice = AVSpeechSynthesisVoice(language:"zh-TW")
+            speechUtterance2.voice = AVSpeechSynthesisVoice(language:"zh-TW")
+            
+            speechUtterance1.pitchMultiplier = voiceType.value
+            speechUtterance1.rate = speedRate.value
+            speechUtterance1.volume = volume.value
+            
+            speechUtterance2.pitchMultiplier = voiceType.value
+            speechUtterance2.rate = speedRate.value
+            speechUtterance2.volume = volume.value
+            synthesizer.speak(speechUtterance1)
+            synthesizer.speak(speechUtterance2)
+            
+            } else {
+                
+            }
         case 4:
             superheroImageView.image = UIImage(named: "papaman")
             if mySwitch.isOn {
-                let speechUtterance = AVSpeechUtterance(string:quoteTextField.text!)
-                speechUtterance.voice = AVSpeechSynthesisVoice(language:"zh-TW")
-                let synthesizer = AVSpeechSynthesizer()
-                speechUtterance.pitchMultiplier = voiceType.value
-                speechUtterance.rate = speedRate.value
-                 speechUtterance.volume = volume.value
-        
-                synthesizer.speak(speechUtterance)
+                let speechUtterance1 = AVSpeechUtterance(string:quoteTextField.text!)
+                let speechUtterance2 = AVSpeechUtterance(string:"豬隊友")
+                speechUtterance2.preUtteranceDelay = 3
+                speechUtterance1.voice = AVSpeechSynthesisVoice(language:"zh-TW")
+                speechUtterance2.voice = AVSpeechSynthesisVoice(language:"zh-TW")
+                
+                speechUtterance1.pitchMultiplier = voiceType.value
+                speechUtterance1.rate = speedRate.value
+                speechUtterance1.volume = volume.value
+                
+                speechUtterance2.pitchMultiplier = voiceType.value
+                speechUtterance2.rate = speedRate.value
+                speechUtterance2.volume = volume.value
+                synthesizer.speak(speechUtterance1)
+                synthesizer.speak(speechUtterance2)
+                
             } else {
-              
+                
+            }
+        default:
+            print ("switch on default condition")
+            
         }
-       default:
-        print ("switch on default condition")
         
-        }
-        
-    }
-    @IBAction func mySwitchAction(_ sender: UISwitch) {
-        chooosePapaMan()
-        
-    }
     
-    @IBAction func segmentControlAction(_ sender: UISegmentedControl) {
-        chooosePapaMan()
-        mySwitch.isOn = false
-        
     }
     
    
