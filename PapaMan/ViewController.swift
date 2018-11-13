@@ -34,7 +34,8 @@ class ViewController: UIViewController {
     volumeLabel.text = String(format:"%.f",volume.value)
         }
    
-   
+  
+  
     
     @IBAction func segmentControlAction(_ sender: UISegmentedControl) {
     
@@ -158,9 +159,18 @@ class ViewController: UIViewController {
     }
     
    
-        override func viewDidLoad() {
+    @IBAction func viewTapped(_ sender: Any) {
+      view.endEditing(true)
+    }
+    override func viewDidLoad() {
             super.viewDidLoad()
+        
+        
             // Do any additional setup after loading the view, typically from a nib.
           
 }
+    
+   
+    @IBAction func dismissKeyboard(_ sender: Any) {
+    }
 }

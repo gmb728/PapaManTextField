@@ -21,10 +21,15 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0RN-Qw-Ioq">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="p28-1P-wli" appends="YES" id="KPv-4m-exG"/>
+                                </connections>
                             </imageView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="3" translatesAutoresizingMaskIntoConstraints="NO" id="Kc8-CW-fkU" userLabel="heroSegment">
                                 <rect key="frame" x="12" y="473" width="390" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
                                 <segments>
                                     <segment title="" image="bat icon"/>
                                     <segment title="" image="achillies icon"/>
@@ -35,6 +40,7 @@
                                 <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="segmentControlAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="gdZ-k4-Pgn"/>
+                                    <outletCollection property="gestureRecognizers" destination="p28-1P-wli" appends="YES" id="sWu-jR-VSb"/>
                                 </connections>
                             </segmentedControl>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GXm-zn-cHd">
@@ -68,6 +74,10 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="dismissKeyboard:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="5D1-fo-F9h"/>
+                                    <action selector="dismissKeyboard:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="XNU-qy-41N"/>
+                                </connections>
                             </textField>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="x8r-gR-cyA">
                                 <rect key="frame" x="155" y="634" width="227" height="30"/>
@@ -92,7 +102,11 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="p28-1P-wli" appends="YES" id="aar-WK-3o9"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="mySwitch" destination="GXm-zn-cHd" id="upm-0u-Zkx"/>
@@ -108,8 +122,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="p28-1P-wli">
+                    <connections>
+                        <action selector="viewTapped:" destination="BYZ-38-t0r" id="hgK-lK-576"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-5001" y="-917"/>
+            <point key="canvasLocation" x="-5436" y="-921"/>
         </scene>
     </scenes>
     <resources>
